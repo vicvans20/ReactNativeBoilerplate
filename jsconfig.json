@@ -1,0 +1,17 @@
+// The directory alias should be updated accordingly to the .babelrc file (where the working alias are set)
+// These "paths" tell VS Code to understand the autocompletion of the alias absolute paths.
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [ "src/*" ],
+      "@src/*": [ "src/*" ],
+      "@navigation/*": [ "src/navigation/*" ],
+      "@features/*": [ "src/features/*" ],
+      "@components/*": [ "src/components/*" ],
+      "@assets/*": [ "src/assets/*" ],
+      "@redux/*": [ "src/redux/*" ],
+      "@styles/*": [ "src/styles/*" ],
+    }
+  }
+}
