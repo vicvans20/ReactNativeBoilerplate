@@ -26,3 +26,12 @@ The key features included on this boilerplate:
     * **actions** - Redux actions related to the feature. (For now constants are included in the same file).
   * **styles** - Styles for the App.
   * **redux** - Redux root definition (combine all reducers).
+  
+  ## Manual setup
+  ```
+  yarn add immutable lodash prop-types
+  ```
+  
+  ```
+  yarn add -D babel-plugin-module-resolver
+  ```
