@@ -38,14 +38,9 @@ The key features included on this boilerplate:
 3. Add packages manually:
 
 ```
-$ yarn add @react-native-community/async-storage @react-native-community/cli immutable jetifier lodash prop-types react-native-gesture-handler react-native-vector-icons react-navigation react-redux redux redux-persist redux-thunk
+$ yarn add @react-native-community/async-storage @react-native-community/cli immutable lodash prop-types react-native-gesture-handler react-native-vector-icons react-navigation react-redux redux redux-persist redux-thunk
 ```
 
 ```
-$ yarn add -D metro-react-native-babel-preset
-```
-
-4. For conflicting packages with Android X, run before build:
-```
-$ npx jetify
+$ yarn add -D babel-plugin-module-resolver
 ```
