@@ -1,8 +1,6 @@
-{
-  "presets": [
-    "react-native"
-  ],
-  "plugins": [
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
     [
       "module-resolver",
       {
@@ -22,9 +20,10 @@
           "@assets": "./src/components",
           "@redux": "./src/redux",
           "@styles": "./src/styles",
-          "styles": "./src/styles/general.js"
+          "styles": "./src/styles/general.js",
+          "api": "./src/api"
         }
       }
     ]
   ]
-}
+};

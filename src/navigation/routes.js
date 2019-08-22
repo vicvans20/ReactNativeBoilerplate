@@ -1,39 +1,30 @@
 // React Navigation.
 import React from 'react';
-import { connect } from 'react-redux';
-import { reduxifyNavigator, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 
 import {
-  createStackNavigator
+  createStackNavigator,
+  createAppContainer,
 } from 'react-navigation';
 
-import LoginScreen from '@features/auth/screens/Login';
-import RegisterScreen from '@features/auth/screens/Register';
+import LoginScreen from '@features/session/screens/Login';
+import RegisterScreen from '@features/session/screens/Register';
 
-// Setup ReactNavigation middleware
-const reactNavigationMiddleware = createReactNavigationReduxMiddleware(
-  'root',
-  state => state.nav
-);
+// import SplashScreen from '@features/auth/screens/SplashScreen';
 
+// ========================== AUTH STACK ==========================
 const RootNavigator = createStackNavigator(
   {
-    Login: LoginScreen,
-    Register: RegisterScreen
+    Login: { screen: LoginScreen, navigationOptions: { header: null } },
+    Register: { screen: RegisterScreen, navigationOptions: { header: null } },
   },
   {
-    initialRouteName: 'Register'
+    initialRouteName: 'Login',
+    // headerMode: 'none',
   }
-)
-
+);
+// ========================= Auth Stack ========================
 
 // ================== REDUX FINAL SETUP =========================
-const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
+const AppNavigator = createAppContainer(RootNavigator)
 
-const mapStateToProps = state => ({
-  state: state.nav,
-});
-
-const AppNavigator = connect(mapStateToProps)(AppWithNavigationState);
-
-export { RootNavigator, AppNavigator, reactNavigationMiddleware }
+export { RootNavigator, AppNavigator }
